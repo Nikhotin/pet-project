@@ -11,9 +11,7 @@ if (process.env.NODE_ENV === 'development') {
   attachLogger();
 }
 
-if (process.env.NODE_ENV === 'development') {
-  startMirage();
-}
+startMirage();
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(

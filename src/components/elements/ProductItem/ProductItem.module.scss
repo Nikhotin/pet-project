@@ -39,6 +39,9 @@
   top: 1rem;
   right: 1rem;
 
+  width: max-content;
+  height: max-content;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,8 +62,8 @@
   & > svg {
     @include hoverColor($white, $gray-30);
 
-    width: max-content;
-    height: max-content;
+    width: 4.4rem;
+    height: 4.4rem;
     padding: 1rem;
   }
 }
