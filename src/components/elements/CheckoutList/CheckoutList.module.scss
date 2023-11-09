@@ -1,0 +1,30 @@
+@import "src/assets/styles/colors", "src/assets/styles/breakpoints", "src/assets/styles/typography";
+
+.PopupWrapper {
+  padding: 3.2rem;
+}
+
+.EmptyWrapper {
+  min-width: 25rem;
+}
+
+.EmptyTitle {
+  @include text1;
+  color: $black;
+  margin-bottom: 1rem;
+}
+
+.Wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Header {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 8rem;
+
+  margin-bottom: 1.5rem;
+}

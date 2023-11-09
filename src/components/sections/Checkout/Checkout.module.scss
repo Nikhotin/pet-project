@@ -1,0 +1,49 @@
+@import "src/assets/styles/colors", "src/assets/styles/typography", "src/assets/styles/breakpoints";
+
+.Wrapper {
+  position: sticky;
+  top: 1rem;
+
+  width: 100%;
+  height: max-content;
+  background-color: $gray-30;
+  padding: 4rem 3rem 15rem;
+  border-radius: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media('max', 'md') {
+    position: static;
+    width: max-content;
+    top: unset;
+  }
+
+  @include media('max', 'sm') {
+    width: 100%;
+  }
+}
+
+.Title {
+  @include title2;
+  margin-bottom: 3rem;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.5rem;
+  width: 100%;
+  margin-bottom: 6rem;
+}
+
+.Total {
+  @include text2;
+  margin-bottom: 2rem;
+
+  & > span:last-of-type {
+    @include text1;
+  }
+}

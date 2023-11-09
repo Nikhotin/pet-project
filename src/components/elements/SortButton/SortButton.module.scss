@@ -1,0 +1,35 @@
+@import "src/assets/styles/colors";
+
+.Wrapper {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  padding: 1rem 2rem 1rem 1.4rem;
+
+  border: 0.1rem solid $gray-50;
+  border-radius: 2rem;
+}
+
+.Content {
+  width: 25rem;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.Action {
+  padding: 1rem;
+  cursor: pointer;
+
+  @include hoverColor($gray-90, $gray-60);
+}
+
+.Active {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: underline;
+}

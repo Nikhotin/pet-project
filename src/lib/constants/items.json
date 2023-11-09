@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "Кровать TATRAN",
+      "description": "Основание из полированной нержавеющей стали, придает оригинальный парящий эффект.",
+      "price": 120000,
+      "full_image": "/images/krovatfull.jpeg",
+      "cart_image": "/images/divanmini.png",
+      "favorite": false
+    },
+    {
+      "id": "2",
+      "name": "Кресло VILORA",
+      "description": "Мягкое и уютное, аккуратное и стильное. Упругие подушки, сиденья и приятная на ощупь ткань.",
+      "price": 21000,
+      "full_image": "/images/kreslo2full.jpeg",
+      "cart_image": "/images/stolmini.png",
+      "favorite": false
+    },
+    {
+      "id": "3",
+      "name": "Стол MENU",
+      "description": "Европейский дуб - отличается особой прочностью и стабильностью.",
+      "price": 34000,
+      "full_image": "/images/stolfull.jpeg",
+      "cart_image": "/images/stolmini.png",
+      "favorite": false
+    },
+    {
+      "id": "4",
+      "name": "Диван ASKESTA",
+      "description": "Благодаря защелкивающемуся механизму диван легко раскладывается в комфортную кровать.",
+      "price": 68000,
+      "full_image": "/images/divanfull.png",
+      "cart_image": "/images/divanmini.png",
+      "favorite": false
+    },
+    {
+      "id": "5",
+      "name": "Кресло LUNAR",
+      "description": "Прекрасно переносит солнечные лучи, перепады влажности и любые осадки.",
+      "price": 40000,
+      "full_image": "/images/kreslofull.jpeg",
+      "cart_image": "/images/stolmini.png",
+      "favorite": false
+    },
+    {
+      "id": "6",
+      "name": "Шкаф Nastan",
+      "description": "Мебель может быть оснащена разнообразными системами подсветки.",
+      "price": 80000,
+      "full_image": "/images/shkaf.png",
+      "cart_image": "/images/divanmini.png",
+      "favorite": false
+    }
+  ]
+}

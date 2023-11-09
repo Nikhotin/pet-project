@@ -1,0 +1,61 @@
+@import "src/assets/styles/colors", "src/assets/styles/breakpoints", "src/assets/styles/typography";
+
+.Wrapper {
+  width: 100%;
+  padding: 1.6rem 0;
+  margin-bottom: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: $gray-40;
+  color: $white;
+
+  @include media('max', 'sm') {
+    padding: 5rem 1.6rem 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+}
+
+.Title {
+  @include title1;
+
+  @include media('max', 'sm') {
+    @include defaultText;
+    font-weight: 600;
+  }
+}
+
+.Actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+
+  & > div {
+    @include hoverColor($white, $gray-30);
+  }
+}
+
+.Text {
+  @include defaultText;
+
+  @include media('min', 'sm') {
+    display: block;
+  }
+
+  @include media('max', 'sm') {
+    display: none;
+  }
+}
+
+.Icon {
+  @include media('min', 'sm') {
+    display: none;
+  }
+
+  @include media('max', 'sm') {
+    display: block;
+  }
+}

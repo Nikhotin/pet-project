@@ -1,0 +1,66 @@
+@import "src/assets/styles/colors", "src/assets/styles/typography";
+
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+
+  &.Primary {
+    @include hoverBackground($black, $gray-60);
+
+    color: $white;
+    border: 0.1rem solid transparent;
+
+    &:hover {
+      color: $gray-30;
+    }
+  }
+
+  &.Secondary {
+    @include hoverBorder($black, $gray-60);
+
+    border: 0.1rem solid;
+    background-color: transparent;
+
+    &:hover {
+      color: $gray-60;
+    }
+  }
+
+  &.Medium {
+    @include description;
+    padding: 1rem 2rem;
+  }
+
+  &.Large {
+    @include defaultText;
+    padding: 1rem 2rem;
+  }
+}
+
+.FullWidth {
+  width: 100%;
+}
+
+.TextButton {
+  padding: 0.4rem;
+  margin: -0.4rem;
+  text-decoration: underline;
+
+  &.Primary {
+    @include hoverColor($black, $gray-60);
+  }
+
+  &.Secondary {
+    @include hoverColor($gray-60, $gray-90);
+  }
+
+  &.Medium {
+    @include description;
+  }
+
+  &.Large {
+    @include defaultText;
+  }
+}

@@ -1,0 +1,39 @@
+@mixin defaultText {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+@mixin title1 {
+  font-size: 3.6rem;
+  font-weight: 600;
+}
+
+@mixin title2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+@mixin title3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+@mixin text1 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+@mixin text2 {
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+
+@mixin text3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+@mixin description {
+  font-size: 1.4rem;
+  font-weight: 400;
+}

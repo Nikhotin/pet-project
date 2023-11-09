@@ -1,0 +1,19 @@
+@import "src/assets/styles/breakpoints";
+
+.Wrapper {
+  padding: 0 12rem 3rem;
+
+  @include media('max', 'xl') {
+    padding: 0 2.4rem;
+  }
+
+  @include media('max', 'sm') {
+    padding: 0;
+  }
+}
+
+.Content {
+  @include media('max', 'sm') {
+    padding: 1.5rem;
+  }
+}

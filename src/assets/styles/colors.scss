@@ -1,0 +1,45 @@
+$gray-30: #F7F6F6;
+$gray-40: #CCCCCC;
+$gray-45: #CACDD8;
+$gray-50: #C4C4C4;
+$gray-60: #888888;
+$gray-90: #050505;
+
+$red-40: #F27983;
+$red-50: #E13C49;
+
+$white: #ffffff;
+$black: #000000;
+
+@mixin hoverColor($color,$hover) {
+  cursor: pointer;
+  transition: color 0.3s ease-in;
+  will-change: color;
+  color: $color;
+
+  &:hover {
+    color: $hover;
+  }
+}
+
+@mixin hoverBackground($color,$hover) {
+  cursor: pointer;
+  transition: background-color 0.3s ease-in;
+  will-change: background-color;
+  background-color: $color;
+
+  &:hover {
+    background-color: $hover;
+  }
+}
+
+@mixin hoverBorder($color,$hover) {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  will-change: border-color;
+  border-color: $color;
+
+  &:hover {
+    border-color: $hover;
+  }
+}
