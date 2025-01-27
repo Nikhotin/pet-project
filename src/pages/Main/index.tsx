@@ -6,6 +6,7 @@ import ProductItem from '../../components/elements/ProductItem';
 import SortButton from '../../components/elements/SortButton';
 import styles from './Main.module.scss';
 import { clsx } from 'clsx';
+import styled from 'styled-components';
 
 function MainPage() {
   const products = useStore($products);
@@ -15,13 +16,25 @@ function MainPage() {
   }, []);
 
   return (
-    <div className={clsx(styles.Wrapper)}>
+    <Wrapper>
       <SortButton />
       <GridList>
         {products.length ? products.map((el) => <ProductItem key={el.id} {...el} />) : <></>}
       </GridList>
-    </div>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & > div:first-of-type {
+    margin-bottom: 3.5rem;
+    align-self: end;
+  }
+`;
 
 export default MainPage;

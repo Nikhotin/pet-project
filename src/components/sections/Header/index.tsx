@@ -8,21 +8,22 @@ import { $cartItems } from '../../../store';
 import clsx from 'clsx';
 import styles from './Header.module.scss';
 import CheckoutList from '../../elements/CheckoutList';
+import styled from 'styled-components';
 
 function Header() {
   const navigate = useNavigate();
   const cartItems = useStore($cartItems);
 
   return (
-    <div className={clsx(styles.Wrapper)}>
-      <div className={clsx(styles.Title)}>Интерьер.</div>
-      <div className={clsx(styles.Actions)}>
+    <Wrapper>
+      <Title>Интерьер.</Title>
+      <Actions>
         <div
           onClick={() => {
             navigate('/');
           }}
         >
-          <span className={clsx(styles.Text)}>Каталог</span>
+          <Text>Каталог</Text>
           <Catalog className={clsx(styles.Icon)} />
         </div>
         <Popover trigger={TriggerTypes.Hover} content={<CheckoutList items={cartItems} forPopup />}>
@@ -31,13 +32,63 @@ function Header() {
               navigate('/cart');
             }}
           >
-            <span className={clsx(styles.Text)}>Корзина</span>
+            <Text>Корзина</Text>
             <Cart className={clsx(styles.Icon)} />
           </div>
         </Popover>
-      </div>
-    </div>
+      </Actions>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  width: 100%;
+  padding: 1.6rem 0;
+  margin-bottom: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: $gray-40;
+  color: $white;
+
+  @include media('max', 'sm') {
+    padding: 5rem 1.6rem 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+`;
+
+const Title = styled.div`
+  @include title1;
+
+  @include media('max', 'sm') {
+    @include defaultText;
+    font-weight: 600;
+  }
+`;
+
+const Actions = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+
+  & > div {
+    @include hoverColor($white, $gray-30);
+  }
+`;
+
+const Text = styled.span`
+  @include defaultText;
+
+  @include media('min', 'sm') {
+    display: block;
+  }
+
+  @include media('max', 'sm') {
+    display: none;
+  }
+`;
 
 export default Header;

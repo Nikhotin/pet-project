@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router';
 import MainPage from '../pages/Main';
 import CartPage from '../pages/Cart';
 import MainLayout from '../components/layouts/Main';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Clarity from '@microsoft/clarity';
 
 function App() {
+  useEffect(() => {
+    Clarity.init('pz1xigc1xq');
+  }, []);
+
   return (
     <>
       <Routes>

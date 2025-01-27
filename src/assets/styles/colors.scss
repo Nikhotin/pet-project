@@ -1,17 +1,17 @@
-$gray-30: #F7F6F6;
-$gray-40: #CCCCCC;
-$gray-45: #CACDD8;
-$gray-50: #C4C4C4;
+$gray-30: #f7f6f6;
+$gray-40: #cccccc;
+$gray-45: #cacdd8;
+$gray-50: #c4c4c4;
 $gray-60: #888888;
 $gray-90: #050505;
 
-$red-40: #F27983;
-$red-50: #E13C49;
+$red-40: #f27983;
+$red-50: #e13c49;
 
 $white: #ffffff;
 $black: #000000;
 
-@mixin hoverColor($color,$hover) {
+@mixin hoverColor($color, $hover) {
   cursor: pointer;
   transition: color 0.3s ease-in;
   will-change: color;
@@ -22,7 +22,7 @@ $black: #000000;
   }
 }
 
-@mixin hoverBackground($color,$hover) {
+@mixin hoverBackground($color, $hover) {
   cursor: pointer;
   transition: background-color 0.3s ease-in;
   will-change: background-color;
@@ -33,7 +33,7 @@ $black: #000000;
   }
 }
 
-@mixin hoverBorder($color,$hover) {
+@mixin hoverBorder($color, $hover) {
   cursor: pointer;
   transition: all 0.3s ease-in;
   will-change: border-color;

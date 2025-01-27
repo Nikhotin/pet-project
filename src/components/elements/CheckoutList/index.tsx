@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { clsx } from 'clsx';
 import styles from './CheckoutList.module.scss';
 import CheckoutListItem from '../CheckoutListItem';
+import styled from 'styled-components';
 
 interface CheckoutListProps {
   items: Array<CartItem>;
@@ -17,8 +18,8 @@ function CheckoutList({ items, forPopup = false }: CheckoutListProps) {
 
   if (items.length === 0) {
     return (
-      <div className={clsx(styles.EmptyWrapper, forPopup && styles.PopupWrapper)}>
-        <div className={clsx(styles.EmptyTitle)}>Корзина пуста</div>
+      <EmptyWrapper className={clsx(forPopup && styles.PopupWrapper)}>
+        <EmptyTitle>Корзина пуста</EmptyTitle>
         {location.pathname !== '/' ? (
           <Button
             text="Добавьте товары на странице каталога"
@@ -31,17 +32,17 @@ function CheckoutList({ items, forPopup = false }: CheckoutListProps) {
         ) : (
           <></>
         )}
-      </div>
+      </EmptyWrapper>
     );
   }
 
   return (
-    <div className={clsx(styles.Wrapper, forPopup && styles.PopupWrapper)}>
+    <Wrapper className={clsx(forPopup && styles.PopupWrapper)}>
       {!forPopup ? (
-        <div className={clsx(styles.Header)}>
+        <Header>
           <div>Товар</div>
           <div>К-во</div>
-        </div>
+        </Header>
       ) : (
         <></>
       )}
@@ -50,8 +51,37 @@ function CheckoutList({ items, forPopup = false }: CheckoutListProps) {
           <CheckoutListItem item={el} forPopup={forPopup} key={el.item.id} />
         ))}
       </div>
-    </div>
+    </Wrapper>
   );
 }
+
+const PopupWrapper = styled.div`
+  padding: 3.2rem;
+`;
+
+const EmptyWrapper = styled.div`
+  min-width: 25rem;
+`;
+
+const EmptyTitle = styled.div`
+  @include text1;
+  color: $black;
+  margin-bottom: 1rem;
+`;
+
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Header = styled.div`
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 8rem;
+
+  margin-bottom: 1.5rem;
+`;
 
 export default CheckoutList;

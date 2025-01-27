@@ -9,8 +9,7 @@ import Button, {
   ButtonTypes,
   ButtonVariables,
 } from '../../components/elements/Button';
-import { clsx } from 'clsx';
-import styles from './Cart.module.scss';
+import styled from 'styled-components';
 
 function CartPage() {
   const navigate = useNavigate();
@@ -18,10 +17,10 @@ function CartPage() {
   const total = useStore($total);
 
   return (
-    <div className={clsx(styles.Wrapper)}>
+    <Wrapper>
       <div>
         <CheckoutList items={cartItems} />
-        <div className={clsx(styles.Actions)}>
+        <Actions>
           {cartItems.length ? (
             <>
               <Button
@@ -46,11 +45,34 @@ function CartPage() {
           ) : (
             <></>
           )}
-        </div>
+        </Actions>
       </div>
       <Checkout total={total} />
-    </div>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+
+  @include media('max', 'md') {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`;
+
+const Actions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  margin-top: 2rem;
+
+  @include media('max', 'md') {
+    margin-top: 1rem;
+  }
+`;
 
 export default CartPage;

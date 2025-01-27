@@ -1,6 +1,7 @@
 import React from 'react';
 import { clsx } from 'clsx';
 import styles from './Input.module.scss';
+import styled from 'styled-components';
 
 interface InputProps {
   value: string;
@@ -21,7 +22,7 @@ function Input({ value, name, type, placeholder, error, disabled, onChange, onBl
   };
 
   return (
-    <div className={clsx(styles.Wrapper, error && styles.ErrorWrapper)} onClick={handleClick}>
+    <Wrapper className={clsx(error && styles.ErrorWrapper)} onClick={handleClick}>
       <input
         ref={inputRef}
         aria-label={name}
@@ -34,8 +35,61 @@ function Input({ value, name, type, placeholder, error, disabled, onChange, onBl
         onBlur={(e) => onBlur?.(e.target.value, e)}
         onChange={(e) => onChange?.(e.target.value, e)}
       />
-    </div>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  @include description;
+
+  position: relative;
+
+  width: 100%;
+  height: 2rem;
+  min-height: 2rem;
+  padding: 0 1rem 0 0;
+
+  background-color: transparent;
+  border-bottom: 0.1rem solid $gray-45;
+
+  transition: all 0.3s ease-in-out;
+  will-change: border-color;
+
+  &:hover,
+  &:focus-within {
+    border-bottom-color: $gray-90;
+
+    & > input {
+      &::placeholder {
+        color: $gray-90;
+      }
+    }
+  }
+
+  & > input {
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    color: $gray-90;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: inherit;
+    background-color: transparent;
+    border: none;
+
+    &::placeholder {
+      @include description;
+      color: $gray-60;
+
+      transition: color 0.3s ease-in-out;
+      will-change: color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+`;
 
 export default Input;

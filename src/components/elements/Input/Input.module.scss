@@ -1,4 +1,4 @@
-@import "src/assets/styles/colors", "src/assets/styles/typography";
+@import 'src/assets/styles/colors', 'src/assets/styles/typography';
 
 .Wrapper {
   @include description;
@@ -16,7 +16,8 @@
   transition: all 0.3s ease-in-out;
   will-change: border-color;
 
-  &:hover, &:focus-within {
+  &:hover,
+  &:focus-within {
     border-bottom-color: $gray-90;
 
     & > input {
@@ -55,7 +56,8 @@
 .ErrorWrapper {
   border-bottom: 0.1rem solid $red-40;
 
-  &:hover, &:focus-within {
+  &:hover,
+  &:focus-within {
     border-bottom-color: $red-50;
   }
 

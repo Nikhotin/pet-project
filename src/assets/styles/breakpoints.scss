@@ -1,4 +1,9 @@
-$sizes: ("xs":320px, "sm": 425px, "md":768px, "xl":1024px);
+$sizes: (
+  'xs': 320px,
+  'sm': 425px,
+  'md': 768px,
+  'xl': 1024px,
+);
 
 @mixin media($minmax, $media) {
   @each $size, $resolution in $sizes {
